@@ -1,6 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <!-- Dark rounded background -->
-  <rect width="512" height="512" rx="96" fill="#0A0A0F"/>
-  <!-- Lightning bolt — scaled Lucide Zap (24×24 → 512×512, ×20 + offset 16) -->
-  <path d="M276,56 L76,296 H256 L236,456 L436,216 H256 Z" fill="#7EE8A2"/>
+  <rect width="100" height="100" rx="15" fill="#0A0A0F"/>
+
+  <!--
+    Lightning bolt — 6-point polygon derived from Lucide Zap (24×24)
+    Original vertices: (13,2),(3,14),(12,14),(11,22),(21,10),(12,10)
+    Scale ×2.8, offset x+15 y+3 → fits upper ~70% of canvas, centred
+
+    A(52,9)  top
+    B(23,42) outer-left (lower step)
+    C(49,42) inner-right at y=42  ← step goes RIGHT
+    D(46,65) bottom tip
+    E(74,31) outer-right (upper step)
+    F(49,31) inner-left  at y=31  ← step goes LEFT
+  -->
+  <polygon
+    points="52,9 23,42 49,42 46,65 74,31 49,31"
+    fill="#7EE8A2"
+  />
+
+  <!-- TRS wordmark — visible at ≥180 px, brand recognition at large sizes -->
+  <text
+    x="50" y="87"
+    font-family="Arial Black,Arial,Helvetica,sans-serif"
+    font-weight="900"
+    font-size="17"
+    fill="#7EE8A2"
+    text-anchor="middle"
+    letter-spacing="1"
+  >TRS</text>
 </svg>

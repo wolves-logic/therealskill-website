@@ -6,7 +6,7 @@
  */
 
 import sharp from 'sharp'
-import { writeFileSync, readFileSync } from 'fs'
+import { writeFileSync, readFileSync, copyFileSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -74,7 +74,14 @@ async function main() {
   writeFileSync(join(PUBLIC, 'favicon.ico'), ico)
   console.log('  ✓  favicon.ico  (32×32 + 16×16)')
 
-  console.log('\n✅  All favicons written to /public')
+  // Mirror critical files into /app for Next.js App Router auto-detection
+  const APP_DIR = join(__dirname, '..', 'app')
+  copyFileSync(join(PUBLIC, 'favicon-32x32.png'), join(APP_DIR, 'icon.png'))
+  copyFileSync(join(PUBLIC, 'apple-touch-icon.png'), join(APP_DIR, 'apple-icon.png'))
+  console.log('  ✓  app/icon.png  (Next.js auto-detect)')
+  console.log('  ✓  app/apple-icon.png  (Next.js auto-detect)')
+
+  console.log('\n✅  All favicons written to /public + /app')
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
