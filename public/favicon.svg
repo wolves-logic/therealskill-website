@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Dark rounded background -->
+  <rect width="512" height="512" rx="96" fill="#0A0A0F"/>
+  <!-- Lightning bolt — scaled Lucide Zap (24×24 → 512×512, ×20 + offset 16) -->
+  <path d="M276,56 L76,296 H256 L236,456 L436,216 H256 Z" fill="#7EE8A2"/>
+</svg>

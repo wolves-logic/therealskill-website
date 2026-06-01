@@ -35,17 +35,43 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Build & Deploy
+## Deploy
+
+To deploy any changes, just run:
 
 ```bash
-# Production build
+./deploy.sh
+```
+
+This script will:
+1. Stage all changes (`git add .`)
+2. Create a timestamped commit (`update: auto-deploy YYYY-MM-DD HH:MM:SS`)
+3. Push to `origin main`
+4. Vercel picks up the push and auto-deploys in ~60 seconds
+
+> **Prerequisites:** Git remote must be set to your GitHub repo and Vercel must be connected to it.
+
+## Build
+
+```bash
+# Production build (also validates types + lint)
 npm run build
 
 # Start production server locally
 npm start
 ```
 
-Deploy to [Vercel](https://vercel.com) with zero configuration — just push to GitHub and import the repo.
+Deploy to [Vercel](https://vercel.com) with zero configuration — import the GitHub repo and Vercel auto-detects Next.js.
+
+## Regenerate Favicons
+
+If you update the brand colours or icon, re-run:
+
+```bash
+node scripts/generate-favicons.mjs
+```
+
+This reads `public/favicon.svg` and regenerates all PNG sizes + `favicon.ico`.
 
 ## Project Structure
 

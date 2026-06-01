@@ -1,0 +1,25 @@
+{
+  "name": "TheRealSkill",
+  "short_name": "TRS",
+  "description": "India's #1 EdTech for Engineering Students — Projects, Courses & Placement Prep",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#0A0A0F",
+  "lang": "en-IN",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
