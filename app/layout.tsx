@@ -69,9 +69,11 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: 'https://therealskill.com' },
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
     shortcut: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    apple: '/favicon.svg',
   },
   manifest: '/site.webmanifest',
 }
@@ -118,6 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
